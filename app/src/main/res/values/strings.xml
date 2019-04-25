@@ -4,5 +4,8 @@
     <string name="next">next</string>
     <string name="open_picture">Open Picture</string>
     <string name="todo">TODO</string>
+    <string name="Height">Height</string>
+    <string name="Waist">Waist</string>
+    <string name="Hip">Hip</string>
 
 </resources>

@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="407dp"
-        android:layout_height="400dp"
+        android:layout_height="490dp"
         android:scaleType="fitCenter"
         android:src="@drawable/sample" />
 
@@ -22,14 +22,14 @@
         />
 
     <Button
-        android:id="@+id/runBtn"
+        android:id="@+id/open_picture"
         style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/run" />
+        android:text="@string/open_picture" />
 
     <Button
-        android:id="@+id/nextBtn"
+        android:id="@+id/next"
         style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,11 +37,10 @@
         />
 
     <Button
-        android:id="@+id/openBtn"
+        android:id="@+id/Run"
         style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/open_picture"
-       />
+        android:text="@string/run" />
 
 </LinearLayout>

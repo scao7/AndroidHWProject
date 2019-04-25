@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    tools:context=".secondActivity">
+
+    <LinearLayout
+        android:id="@+id/top_buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/Height"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="139dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/Height" />
+
+        <Button
+            android:id="@+id/Waist"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/Waist" />
+
+
+        <Button
+            android:id="@+id/Hip"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/Hip" />
+    </LinearLayout>
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:src="@drawable/sample"-->
+        <!--android:contentDescription="@string/todo" />-->
+    <com.example.heightwaist.drawLine
+        android:id="@+id/lineView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sample"
+        android:scaleType = "fitCenter"
+        />
+
+
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>
+
+

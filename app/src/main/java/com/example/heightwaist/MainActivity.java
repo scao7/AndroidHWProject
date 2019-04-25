@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import android.graphics.PointF;
 import android.net.Uri;
 import android.os.Build;
 
@@ -23,8 +24,6 @@ import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
-import java.io.InputStream;
-
 public class MainActivity extends AppCompatActivity {
 
    ImageView imageView;
@@ -33,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
    Button openBtn;
    Button nextBtn;
    Uri imageUri;
+
 
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageView = findViewById(R.id.imageView);
-        runBtn = findViewById(R.id.runBtn);
-        openBtn = findViewById(R.id.openBtn);
+        runBtn = findViewById(R.id.Run);
+        openBtn = findViewById(R.id.open_picture);
 
         txtResult = findViewById(R.id.txtResult);
 
@@ -52,20 +52,23 @@ public class MainActivity extends AppCompatActivity {
         runBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent secondPage = new Intent(getBaseContext(), secondActivity.class);
+                startActivity(secondPage);
 
-                Bitmap myBitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.qrcode);
-                imageView.setImageBitmap(myBitmap);
 
-                BarcodeDetector detector = new BarcodeDetector.Builder(getApplicationContext())
-                        .setBarcodeFormats(Barcode.QR_CODE)
-                        .build();
-
-                Frame frame = new Frame.Builder()
-                        .setBitmap(myBitmap).build();
-                SparseArray<Barcode> barsCode = detector.detect(frame);
-                Barcode result = barsCode.valueAt(0);
-
-                txtResult.setText(result.rawValue);
+//                Bitmap myBitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.qrcode);
+//                imageView.setImageBitmap(myBitmap);
+//
+//                BarcodeDetector detector = new BarcodeDetector.Builder(getApplicationContext())
+//                        .setBarcodeFormats(Barcode.QR_CODE)
+//                        .build();
+//
+//                Frame frame = new Frame.Builder()
+//                        .setBitmap(myBitmap).build();
+//                SparseArray<Barcode> barsCode = detector.detect(frame);
+//                Barcode result = barsCode.valueAt(0);
+//
+//                txtResult.setText(result.rawValue);
             }
         });
 
@@ -137,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
 
 
 }
