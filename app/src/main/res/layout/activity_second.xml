@@ -10,34 +10,35 @@
 
     <LinearLayout
         android:id="@+id/top_buttons"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_gravity="center"
         >
 
         <Button
             android:id="@+id/Height"
             style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:layout_width="139dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
+            android:layout_gravity="center"
             android:text="@string/Height" />
 
         <Button
             android:id="@+id/Waist"
             style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:layout_width="138dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
+            android:layout_gravity="center"
             android:text="@string/Waist" />
 
 
         <Button
             android:id="@+id/Hip"
             style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:layout_width="123dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
+            android:layout_gravity="center"
             android:text="@string/Hip" />
     </LinearLayout>
 

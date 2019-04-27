@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import android.graphics.PointF;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 
@@ -32,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
    Button openBtn;
    Button nextBtn;
    Uri imageUri;
+   private int current_image;
+   int[] images = {R.drawable.sample,
+                   R.drawable.pic1,
+                   R.drawable.pic2,
+                   R.drawable.pic3,
+                   R.drawable.pic4,
+                   R.drawable.pic5,
+                   R.drawable.pic6,
+                   };
 
 
     private static final int IMAGE_PICK_CODE = 1000;
@@ -45,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         runBtn = findViewById(R.id.Run);
         openBtn = findViewById(R.id.open_picture);
-
+        nextBtn = findViewById(R.id.next);
         txtResult = findViewById(R.id.txtResult);
 
 //         scan qr code
@@ -72,13 +82,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        // currently it read a bitmap
-//        nextBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+        // currently it read a bitmap
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                current_image++;
+                current_image = current_image % images.length;
+                imageView.setImageResource(images[current_image]);
+            }
+        });
 
         //open open camera roll
         openBtn.setOnClickListener(new View.OnClickListener() {
@@ -140,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
 
 
 
