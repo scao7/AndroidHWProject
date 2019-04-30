@@ -15,6 +15,9 @@ public class drawLine extends ImageView {
 
     private Paint paint = new Paint();
     private PointF pointA,pointB;
+    private  String pixelInfo;
+    public boolean vertical;
+
     public drawLine(Context context) {
         super(context);
     }
@@ -33,8 +36,22 @@ public class drawLine extends ImageView {
         paint.setColor(Color.RED);
         paint.setStrokeWidth(10);
         canvas.drawLine(pointA.x, pointA.y,pointB.x,pointB.y,paint);
+        paint.setColor(Color.GREEN);
+        paint.setTextSize(40);
+
+
+        if(vertical){
+            pixelInfo = Math.abs(pointB.y - pointA.y)+"pixel" ;
+            canvas.drawText(pixelInfo, pointA.x, (pointA.y + pointB.y)/2, paint);
+        }
+        else {
+            pixelInfo = Math.abs(pointB.x - pointA.y ) + "pixel";
+            canvas.drawText(pixelInfo, (pointA.x + pointB.x)/2, pointA.y , paint);
+        }
+
 
     }
+
     public void setPointA(PointF point){
            pointA =  point;
     }
