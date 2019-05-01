@@ -2,6 +2,8 @@ package com.example.heightwaist;
 import android.graphics.Bitmap;
 import android.graphics.PointF;
 
+import android.graphics.drawable.BitmapDrawable;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,10 +37,13 @@ public class secondActivity extends AppCompatActivity {
         HeightBtn = findViewById(R.id.Height);
         WaistBtn = findViewById(R.id.Waist);
         HipBtn = findViewById(R.id.Hip);
+        Ostu = findViewById(R.id.Oust);
+//        final ImageView imageView = findViewById(R.id.imageView);
+//        final ImageView bitmapImageView = findViewById(R.id.lineView);
 //        Ostu.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                OstuImage(image);
+//                bitmapImageView.setImageResource(imageView2Bitmap(imageView));
 //            }
 //        });
         HeightBtn.setOnClickListener(new View.OnClickListener() {
@@ -63,11 +68,10 @@ public class secondActivity extends AppCompatActivity {
 
     }
 
-//    private Bitmap OstuImage(Bitmap image){
-//        Bitmap oldImage;
-//        mLineView.setImageBitmap(oldImage);
-//        return oldImage;
-//    }
+    private Bitmap  imageView2Bitmap(ImageView view){
+        Bitmap bitmap = ((BitmapDrawable)view.getDrawable()).getBitmap();
+        return bitmap;
+    }
 
     private void drawOnCanvas(PointF A, PointF B,boolean vertical){
         mLineView = findViewById(R.id.lineView);
