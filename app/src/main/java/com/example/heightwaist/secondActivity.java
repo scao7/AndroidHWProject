@@ -1,4 +1,5 @@
 package com.example.heightwaist;
+import android.graphics.Bitmap;
 import android.graphics.PointF;
 
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +22,10 @@ public class secondActivity extends AppCompatActivity {
     Button HeightBtn ;
     Button WaistBtn ;
     Button HipBtn ;
+    Button Ostu;
+    Bitmap image;
 
+    //create a self define drawLine object
     private drawLine mLineView ;
 
     @Override
@@ -31,6 +35,12 @@ public class secondActivity extends AppCompatActivity {
         HeightBtn = findViewById(R.id.Height);
         WaistBtn = findViewById(R.id.Waist);
         HipBtn = findViewById(R.id.Hip);
+//        Ostu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                OstuImage(image);
+//            }
+//        });
         HeightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,46 +63,21 @@ public class secondActivity extends AppCompatActivity {
 
     }
 
+//    private Bitmap OstuImage(Bitmap image){
+//        Bitmap oldImage;
+//        mLineView.setImageBitmap(oldImage);
+//        return oldImage;
+//    }
+
     private void drawOnCanvas(PointF A, PointF B,boolean vertical){
         mLineView = findViewById(R.id.lineView);
-//        mLineView.setPointA(pointA);
-//        mLineView.setPaintB(pointB);
         mLineView.setPointA(A);
         mLineView.setPaintB(B);
         mLineView.vertical = vertical;
         mLineView.draw();
     }
     private void update(){
-        HeightBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pointA.x = 250;
-                pointA.y = 100;
-                pointB.x = 250;
-                pointB.y = 400;
 
-            }
-        });
-
-        WaistBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pointA.x = 250;
-                pointA.y = 100;
-                pointB.x = 250;
-                pointB.y = 400;
-            }
-        });
-
-        WaistBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pointA.x = 250;
-                pointA.y = 100;
-                pointB.x = 250;
-                pointB.y = 400;
-            }
-        });
     }
 
 

@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         runBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //try to pass image information to second activity
                 Intent secondPage = new Intent(getBaseContext(), secondActivity.class);
                 startActivity(secondPage);
 

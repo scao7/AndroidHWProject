@@ -17,7 +17,6 @@ public class drawLine extends ImageView {
     private PointF pointA,pointB;
     private  String pixelInfo;
     public boolean vertical;
-
     public drawLine(Context context) {
         super(context);
     }
