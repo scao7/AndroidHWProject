@@ -1,5 +1,6 @@
 package com.example.heightwaist;
 import android.graphics.Bitmap;
+import android.graphics.Picture;
 import android.graphics.PointF;
 
 import android.graphics.drawable.BitmapDrawable;
