@@ -65,21 +65,11 @@ public class MainActivity extends AppCompatActivity {
                 //try to pass image information to second activity
                 Intent secondPage = new Intent(getBaseContext(), secondActivity.class);
                 startActivity(secondPage);
+                //send current image to second activity
+                Intent i = new Intent(MainActivity.this, secondActivity.class);
+                i.putExtra("resId",images[current_image]);
+                startActivity(i);
 
-
-//                Bitmap myBitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.qrcode);
-//                imageView.setImageBitmap(myBitmap);
-//
-//                BarcodeDetector detector = new BarcodeDetector.Builder(getApplicationContext())
-//                        .setBarcodeFormats(Barcode.QR_CODE)
-//                        .build();
-//
-//                Frame frame = new Frame.Builder()
-//                        .setBitmap(myBitmap).build();
-//                SparseArray<Barcode> barsCode = detector.detect(frame);
-//                Barcode result = barsCode.valueAt(0);
-//
-//                txtResult.setText(result.rawValue);
             }
         });
 

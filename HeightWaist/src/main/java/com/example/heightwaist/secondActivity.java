@@ -1,5 +1,7 @@
 package com.example.heightwaist;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Picture;
 import android.graphics.PointF;
 
@@ -25,7 +27,7 @@ public class secondActivity extends AppCompatActivity {
     Button HeightBtn ;
     Button WaistBtn ;
     Button HipBtn ;
-    Button Ostu;
+    Button Otsu;
     Bitmap image;
 
     //create a self define drawLine object
@@ -38,15 +40,8 @@ public class secondActivity extends AppCompatActivity {
         HeightBtn = findViewById(R.id.Height);
         WaistBtn = findViewById(R.id.Waist);
         HipBtn = findViewById(R.id.Hip);
-        Ostu = findViewById(R.id.Oust);
-//        final ImageView imageView = findViewById(R.id.imageView);
-//        final ImageView bitmapImageView = findViewById(R.id.lineView);
-//        Ostu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                bitmapImageView.setImageResource(imageView2Bitmap(imageView));
-//            }
-//        });
+        Otsu = findViewById(R.id.Oust);
+
         HeightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,24 +60,63 @@ public class secondActivity extends AppCompatActivity {
                 drawOnCanvas(pointE,pointF,false);
             }
         });
+
+        Otsu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.pic1);
+                Bitmap newBm = converImage(bm);
+                mLineView.setImageBitmap(newBm);
+            }
+        });
+
+
+
         drawOnCanvas(pointA,pointB,true);
 
     }
 
-    private Bitmap  imageView2Bitmap(ImageView view){
-        Bitmap bitmap = ((BitmapDrawable)view.getDrawable()).getBitmap();
-        return bitmap;
-    }
 
     private void drawOnCanvas(PointF A, PointF B,boolean vertical){
         mLineView = findViewById(R.id.lineView);
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            int resid = bundle.getInt("resId");
+            mLineView.setImageResource(resid);
+        }
         mLineView.setPointA(A);
         mLineView.setPaintB(B);
         mLineView.vertical = vertical;
         mLineView.draw();
     }
-    private void update(){
 
+    public  static Bitmap converImage(Bitmap original){
+        Bitmap finalImage = Bitmap.createBitmap(original.getWidth(), original.getHeight(),original.getConfig());
+        int colorPixel;
+        int A,R,G,B;
+        int width = original.getWidth();
+        int height = original.getHeight();
+        for(int x = 0; x < width; x++ ){
+            for(int y = 0 ; y < height; y++){
+                colorPixel = original.getPixel(x,y);
+                A = Color.alpha(colorPixel);
+                R = Color.red(colorPixel);
+                G = Color.green(colorPixel);
+                B = Color.blue(colorPixel);
+
+                if(R > 100 ){
+                    R = 255;
+                }
+                else{
+                    R = 0;
+                }
+                G= R;
+                B= R;
+                finalImage.setPixel(x,y,Color.argb(A,R,G,B));
+            }
+        }
+
+        return finalImage;
     }
 
 
