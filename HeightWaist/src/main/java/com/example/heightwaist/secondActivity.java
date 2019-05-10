@@ -65,18 +65,12 @@ public class secondActivity extends AppCompatActivity {
         Otsu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent thirdPage = new Intent(getBaseContext(), thirdActivity.class);
                 startActivity(thirdPage);
-
-//                Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.pic1);
-//                Bitmap newBm = converImage(bm);
-//                mLineView.setImageBitmap(newBm);
             }
         });
 
         drawOnCanvas(pointA,pointB,true);
-
     }
 
 

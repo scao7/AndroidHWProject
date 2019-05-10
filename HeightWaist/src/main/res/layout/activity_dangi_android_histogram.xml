@@ -5,12 +5,39 @@
     android:orientation="horizontal"
     android:background="@android:color/white">
 
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:gravity="center"
+        android:gravity="top"
         android:orientation="vertical"
         android:background="@android:color/white">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Image"
+            android:id="@+id/upload"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            />
+        <Button
+            android:id="@+id/hst_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Histogram"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:visibility="invisible"
+            />
+
+        <Button
+            android:id="@+id/hst_color_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Color Histogram"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:visibility="invisible"
+            />
 
         <LinearLayout
             android:id="@+id/lyt"
@@ -19,21 +46,7 @@
             android:orientation="vertical" >
         </LinearLayout>
 
-        <Button
-            android:id="@+id/hst_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:text="Show Histogram"
-            />
 
-        <Button
-            android:id="@+id/hst_color_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:text="Show Color Histogram"
-            />
 
         <LinearLayout
             android:id="@+id/lyt_color"
@@ -54,13 +67,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/sample" />
 
-        <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Image"
-            style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:id="@+id/upload"
-            android:layout_margin="20dp"
-            />
+
 
     </RelativeLayout>
 

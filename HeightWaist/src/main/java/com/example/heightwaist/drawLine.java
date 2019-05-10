@@ -4,14 +4,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Point;
-import android.support.annotation.Nullable;
 import android.graphics.PointF;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.view.View;
-import android.widget.ImageView;
 
-public class drawLine extends ImageView {
+public class drawLine extends android.support.v7.widget.AppCompatImageView {
 
     private Paint paint = new Paint();
     private PointF pointA,pointB;

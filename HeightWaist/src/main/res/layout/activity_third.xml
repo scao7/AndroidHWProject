@@ -53,12 +53,29 @@
             android:text="@string/Histogram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/Demo"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:text="@string/Demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
+
+
 
     <ImageView
         android:id="@+id/OriginalImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/lyt"
+        android:layout_width="257dp"
+        android:layout_height="140dp"
+        android:orientation="vertical" >
+    </LinearLayout>
+
 
 
 
