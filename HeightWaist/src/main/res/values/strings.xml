@@ -3,9 +3,15 @@
     <string name="run">Run</string>
     <string name="next">next</string>
     <string name="open_picture">Open Picture</string>
-    <string name="todo">TODO</string>
     <string name="Height">Height</string>
     <string name="Waist">Waist</string>
     <string name="Hip">Hip</string>
     <string name="Ostu"> Ostu</string>
+    <string name="OstuPage">Ostu Thresholding Method Demo</string>
+    <string name="LoadImage">Load Image</string>
+    <string name="Apply">Apply Change</string>
+    <string name="Histogram">Histogram</string>
+    <string name="select_image">Select Image</string>
+    <string name="show_histogram">Show Histogram</string>
+    <string name="show_color_histogram">Show Color Histogram</string>
 </resources>

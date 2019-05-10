@@ -1,4 +1,5 @@
 package com.example.heightwaist;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -64,13 +65,15 @@ public class secondActivity extends AppCompatActivity {
         Otsu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.pic1);
-                Bitmap newBm = converImage(bm);
-                mLineView.setImageBitmap(newBm);
+
+                Intent thirdPage = new Intent(getBaseContext(), thirdActivity.class);
+                startActivity(thirdPage);
+
+//                Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.pic1);
+//                Bitmap newBm = converImage(bm);
+//                mLineView.setImageBitmap(newBm);
             }
         });
-
-
 
         drawOnCanvas(pointA,pointB,true);
 
@@ -90,34 +93,7 @@ public class secondActivity extends AppCompatActivity {
         mLineView.draw();
     }
 
-    public  static Bitmap converImage(Bitmap original){
-        Bitmap finalImage = Bitmap.createBitmap(original.getWidth(), original.getHeight(),original.getConfig());
-        int colorPixel;
-        int A,R,G,B;
-        int width = original.getWidth();
-        int height = original.getHeight();
-        for(int x = 0; x < width; x++ ){
-            for(int y = 0 ; y < height; y++){
-                colorPixel = original.getPixel(x,y);
-                A = Color.alpha(colorPixel);
-                R = Color.red(colorPixel);
-                G = Color.green(colorPixel);
-                B = Color.blue(colorPixel);
 
-                if(R > 100 ){
-                    R = 255;
-                }
-                else{
-                    R = 0;
-                }
-                G= R;
-                B= R;
-                finalImage.setPixel(x,y,Color.argb(A,R,G,B));
-            }
-        }
-
-        return finalImage;
-    }
 
 
 }
